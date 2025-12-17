@@ -12,6 +12,6 @@
     ports:
       - "8080:8080"
     env:
-      MONGO: true
+      MONGO: "true"
       MONGO_URL: "mongodb://mongodb-dev.rdevopsb87.online:27017/catalogue"
 

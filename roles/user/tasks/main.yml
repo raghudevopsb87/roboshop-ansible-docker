@@ -12,7 +12,7 @@
     ports:
       - "8080:8080"
     env:
-      MONGO: true
+      MONGO: "true"
       MONGO_URL: "mongodb://mongo-dev.rdevopsb87.online:27017/users"
       REDIS_URL=: "redis://redis-dev.rdevopsb87.online:6379"
 
