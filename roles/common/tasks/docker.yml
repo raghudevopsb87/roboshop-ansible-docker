@@ -14,6 +14,11 @@
     enabled: yes
     state: started
 
+- name: Install requests python module
+  ansible.builtin.pip:
+    name: requests
+    executable: pip3.13
+
 - name: Extend last partition with all space # growpart /dev/nvme0n1 4
   community.general.parted:
     device: /dev/nvme0n1
