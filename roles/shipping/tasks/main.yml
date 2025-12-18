@@ -15,3 +15,21 @@
       CART_ENDPOINT: "cart-dev.rdevopsb87.online:8080"
       DB_HOST: mysql-dev.rdevopsb87.online
 
+- name: Start a container
+  loop:
+    - app-user
+    - schema
+    - master-data
+  community.docker.docker_container:
+    name: shipping-{{ item }}
+    image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
+    state: started
+    env:
+      DB_TYPE: "mysql"
+      APP_GIT_URL: "https://github.com/roboshop-devops-project-v3/shipping"
+      DB_HOST: mysql-dev.rdevopsb87.online
+      DB_USER: root
+      DB_PASS: RoboShop@1
+      SCHEMA_FILE: db/{{ item }}.sql
+
+
