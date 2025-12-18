@@ -19,6 +19,7 @@
 
 - name: Extend last partition with all space
   ansible.builtin.shell: growpart /dev/nvme0n1 4
+  ignore_errors: true
 
 - name: Extend /var volume # lvextend -r -L +5G /dev/mapper/RootVG-varVol
   community.general.lvol:
