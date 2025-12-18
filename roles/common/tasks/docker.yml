@@ -20,8 +20,7 @@
 - name: Extend last partition with all space # growpart /dev/nvme0n1 4
   community.general.parted:
     device: /dev/nvme0n1
-    number: "4"
-    part_end: "100%"
+    number: -1
     resize: true
     state: present
 
