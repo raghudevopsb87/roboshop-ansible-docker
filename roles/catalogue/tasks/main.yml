@@ -15,3 +15,14 @@
       MONGO: "true"
       MONGO_URL: "mongodb://mongodb-dev.rdevopsb87.online:27017/catalogue"
 
+
+- name: Load Schema
+  community.docker.docker_container:
+    name: schema-load
+    image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
+    state: started
+    env:
+      DB_TYPE: "mongo"
+      APP_GIT_URL: "https://github.com/roboshop-devops-project-v3/catalogue"
+      DB_HOST: "mongodb-dev.rdevopsb87.online"
+      SCHEMA_FILE: "db/master-data.js"
