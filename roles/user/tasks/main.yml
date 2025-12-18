@@ -14,5 +14,5 @@
     env:
       MONGO: "true"
       MONGO_URL: "mongodb://mongo-dev.rdevopsb87.online:27017/users"
-      REDIS_URL=: "redis://redis-dev.rdevopsb87.online:6379"
+      REDIS_URL: "redis://redis-dev.rdevopsb87.online:6379"
 
