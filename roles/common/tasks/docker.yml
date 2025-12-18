@@ -17,12 +17,8 @@
 - name: Install requests python module
   ansible.builtin.shell: pip3.13 install requests
 
-- name: Extend last partition with all space # growpart /dev/nvme0n1 4
-  community.general.parted:
-    device: /dev/nvme0n1
-    number: 4
-    resize: true
-    state: present
+- name: Extend last partition with all space
+  ansible.builtin.shell: growpart /dev/nvme0n1 4
 
 - name: Extend /var volume # lvextend -r -L +5G /dev/mapper/RootVG-varVol
   community.general.lvol:
