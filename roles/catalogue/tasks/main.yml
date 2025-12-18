@@ -15,7 +15,6 @@
       MONGO: "true"
       MONGO_URL: "mongodb://mongodb-dev.rdevopsb87.online:27017/catalogue"
 
-
 - name: Load Schema
   community.docker.docker_container:
     name: schema-load
